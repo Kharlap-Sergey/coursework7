@@ -1,0 +1,17 @@
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+struct Matrix {
+	int n, m; // размерность матрицы
+	double* values; // ссылка на элементы матрицы 
+};
+
+struct Element {
+	int n, m; // индексы элемента
+	double value; // значение элемента
+};
+void ansver();// функция выполнябщая подсчет ответа (нахождение всех слов удолетвор. условию) и выводящая ответ в выходной файл
+Matrix* read(const char* filename); // функция, читабщая матрицу из файла.
+void print(const char* filename, bool f, Matrix* matr, Element* elem);// функция, выводящая ответ.
+Element* findMaxSpecificelement(Matrix* matr); // функция, находящая максимальный элемент среди всех упопрядоченных рядов.
