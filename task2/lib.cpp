@@ -36,7 +36,7 @@ void print(const char* filename, bool f, Matrix* matr, Element* elem) {
 	out.close();
 }
 
-bool isRowIncrease(Matrix* matr, int rwoNumber, int rowLength) {
+bool isRowIncrease(Matrix* matr, int rwoNumber, int rowLength) { // проверка рада на возрастание
 	bool ans = true;
 	for (int i = 0; i < rowLength - 1; i++) {
 		if (*(matr->values + rwoNumber * rowLength + i) > * (matr->values + rwoNumber * rowLength + i + 1)) {
@@ -47,7 +47,7 @@ bool isRowIncrease(Matrix* matr, int rwoNumber, int rowLength) {
 	return ans;
 }
 
-bool isRowDecrease(Matrix* matr, int rwoNumber, int rowLength) {
+bool isRowDecrease(Matrix* matr, int rwoNumber, int rowLength) {// проверка ряда на убываниеы
 	bool ans = true;
 	for (int i = 0; i < rowLength - 1; i++) {
 		if (*(matr->values + rwoNumber * rowLength + i) < *(matr->values + rwoNumber * rowLength + i + 1)) {
@@ -57,7 +57,7 @@ bool isRowDecrease(Matrix* matr, int rwoNumber, int rowLength) {
 	}
 	return ans;
 }
-bool isRowOdered(Matrix* matr, int rwoNumber, int rowLength) {
+bool isRowOdered(Matrix* matr, int rwoNumber, int rowLength) {// проверка ряда на упорядоченность
 	return isRowDecrease(matr, rwoNumber, rowLength) || isRowIncrease(matr, rwoNumber, rowLength);
 }
 
